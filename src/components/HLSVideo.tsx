@@ -1,33 +1,33 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
-import Hls from "hls.js";
+import Hls from 'hls.js'
+import { useEffect, useRef } from 'react'
 
-interface HLSVideoProps {
-  src: string;
-  className?: string;
-  style?: React.CSSProperties;
+type HLSVideoProps = {
+  src: string
+  className?: string
+  style?: React.CSSProperties
 }
 
-export function HLSVideo({ src, className = "", style }: HLSVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+export function HLSVideo({ src, className = '', style }: HLSVideoProps) {
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const video = videoRef.current
+    if (!video) return
 
-    if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
       // Safari native HLS support
-      video.src = src;
+      video.src = src
     } else if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(src);
-      hls.attachMedia(video);
+      const hls = new Hls()
+      hls.loadSource(src)
+      hls.attachMedia(video)
       return () => {
-        hls.destroy();
-      };
+        hls.destroy()
+      }
     }
-  }, [src]);
+  }, [src])
 
   return (
     <video
@@ -39,5 +39,5 @@ export function HLSVideo({ src, className = "", style }: HLSVideoProps) {
       muted
       playsInline
     />
-  );
+  )
 }

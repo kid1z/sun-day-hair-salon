@@ -1,18 +1,18 @@
-"use client";
+'use client'
 
-import { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "motion/react";
+import { motion, useInView } from 'motion/react'
+import { useRef } from 'react'
 
-interface BlurTextProps {
-  text: string;
-  className?: string;
-  delay?: number;
+type BlurTextProps = {
+  text: string
+  className?: string
+  delay?: number
 }
 
-export function BlurText({ text, className = "", delay = 100 }: BlurTextProps) {
-  const ref = useRef<HTMLHeadingElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const words = text.split(" ");
+export function BlurText({ text, className = '', delay = 100 }: BlurTextProps) {
+  const ref = useRef<HTMLHeadingElement>(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const words = text.split(' ')
 
   return (
     <h1 ref={ref} className={className}>
@@ -20,11 +20,11 @@ export function BlurText({ text, className = "", delay = 100 }: BlurTextProps) {
         <motion.span
           key={index}
           className="inline-block mr-[0.25em]"
-          initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 50 }}
           animate={
             isInView
-              ? { opacity: 1, filter: "blur(0px)", y: 0 }
-              : { opacity: 0, filter: "blur(10px)", y: 50 }
+              ? { opacity: 1, filter: 'blur(0px)', y: 0 }
+              : { opacity: 0, filter: 'blur(10px)', y: 50 }
           }
           transition={{
             duration: 0.35,
@@ -36,5 +36,5 @@ export function BlurText({ text, className = "", delay = 100 }: BlurTextProps) {
         </motion.span>
       ))}
     </h1>
-  );
+  )
 }

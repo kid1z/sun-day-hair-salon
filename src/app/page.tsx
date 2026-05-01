@@ -1,73 +1,72 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { Play, ArrowUpRight, Scissors, Sparkles, Star } from "lucide-react";
-import { SplitText } from "@/components/SplitText";
-import { RevealOnScroll } from "@/components/RevealOnScroll";
+import { ArrowUpRight, Scissors, Sparkles, Star } from 'lucide-react'
+import Image from 'next/image'
+import { RevealOnScroll } from '@/components/RevealOnScroll'
+import { SplitText } from '@/components/SplitText'
+import MagneticFramer from '@/components/social-motion'
 
 const services = [
   {
-    title: "Cắt tóc thiết kế",
-    text: "Kiểu cắt được cá nhân hóa theo gương mặt, chất tóc và phong cách riêng của bạn.",
+    title: 'Cắt tóc thiết kế',
+    text: 'Kiểu cắt được cá nhân hóa theo gương mặt, chất tóc và phong cách riêng của bạn.',
   },
   {
-    title: "Nhuộm màu chuyên sâu",
-    text: "Kỹ thuật nhuộm nhiều lớp cùng công thức riêng giúp màu tóc sáng đẹp và bền lâu.",
+    title: 'Nhuộm màu chuyên sâu',
+    text: 'Kỹ thuật nhuộm nhiều lớp cùng công thức riêng giúp màu tóc sáng đẹp và bền lâu.',
   },
   {
-    title: "Tạo kiểu dự tiệc",
-    text: "Tạo kiểu chỉn chu, độ phồng chuẩn salon, phù hợp cho mọi sự kiện đặc biệt.",
+    title: 'Tạo kiểu dự tiệc',
+    text: 'Tạo kiểu chỉn chu, độ phồng chuẩn salon, phù hợp cho mọi sự kiện đặc biệt.',
   },
-];
+]
 
 const galleryItems = [
   {
-    look: "Vàng mật ong",
-    image:
-      "https://images.unsplash.com/photo-1559599076-9c61d8e1b1f8?auto=format&fit=crop&w=900&q=80",
+    look: 'Cam sáng',
+    image: '/hair1.png',
   },
   {
-    look: "Nâu espresso",
-    image:
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80",
+    look: 'Nhuộm Balayage',
+    image: '/hair2.jpeg',
   },
   {
-    look: "Đồng ánh mềm",
-    image:
-      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=900&q=80",
+    look: 'Nối tóc tự nhiên',
+    image: '/hair3.jpeg',
   },
   {
-    look: "Bóng mượt cao cấp",
-    image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
+    look: 'Uốn Nhuộm Balayage',
+    image: '/hair4.jpeg',
   },
-];
+]
 
 const localBusinessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "HairSalon",
-  name: "Sun Day Hair Salon",
+  '@context': 'https://schema.org',
+  '@type': 'HairSalon',
+  name: 'Sun Day Hair Salon',
   image:
-    "https://images.unsplash.com/photo-1559599076-9c61d8e1b1f8?auto=format&fit=crop&w=1200&q=80",
+    'https://images.unsplash.com/photo-1559599076-9c61d8e1b1f8?auto=format&fit=crop&w=1200&q=80',
   description:
-    "Salon tóc cao cấp tại Bình Tân, TP. Hồ Chí Minh, chuyên cắt tóc, nhuộm màu và tạo kiểu dự tiệc.",
+    'Salon tóc cao cấp tại Bình Tân, TP. Hồ Chí Minh, chuyên cắt tóc, nhuộm màu và tạo kiểu dự tiệc.',
   address: {
-    "@type": "PostalAddress",
-    streetAddress: "140 Đường số 10, Phường Bình Hưng Hòa",
-    addressLocality: "Bình Tân",
-    addressRegion: "TP. Hồ Chí Minh",
-    addressCountry: "VN",
+    '@type': 'PostalAddress',
+    streetAddress: '140 Đường số 10, Phường Bình Hưng Hòa',
+    addressLocality: 'Bình Tân',
+    addressRegion: 'TP. Hồ Chí Minh',
+    addressCountry: 'VN',
   },
-  areaServed: "TP. Hồ Chí Minh",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-};
+  areaServed: 'TP. Hồ Chí Minh',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+}
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#090807] text-[#f9f3e7]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
       />
 
       <header className="relative min-h-svh overflow-hidden">
@@ -100,10 +99,10 @@ export default function Home() {
 
             <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
               {[
-                { label: "Giới thiệu", href: "#about" },
-                { label: "Dịch vụ", href: "#services" },
-                { label: "Bộ sưu tập", href: "#gallery" },
-                { label: "Liên hệ", href: "#contact" },
+                { label: 'Giới thiệu', href: '#about' },
+                { label: 'Dịch vụ', href: '#services' },
+                { label: 'Bộ sưu tập', href: '#gallery' },
+                { label: 'Liên hệ', href: '#contact' },
               ].map((link) => (
                 <a
                   key={link.href}
@@ -142,9 +141,9 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-pretty font-body text-base font-medium text-[#f8efdf]/90 sm:text-lg">
+          <p className="mt-8 max-w-2xl text-pretty font-body text-base font-medium text-[#f8efdf]/90 sm:text-lg">
             <SplitText
-              text="Dịch vụ cắt tóc cao cấp, nhuộm màu chuyên sâu và tạo kiểu dự tiệc tại 140 Đường số 10, Phường Bình Hưng Hòa, Bình Tân, TP. Hồ Chí Minh."
+              text="Địa chỉ: 140 Đường số 10, Phường Bình Hưng Hòa, Bình Tân, TP. Hồ Chí Minh."
               type="words"
               delay={0.5}
               stagger={0.05}
@@ -153,32 +152,102 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <button className="group flex items-center gap-4 rounded-full bg-[#f7c489] px-4 py-3 pr-6 font-body text-[15px] font-semibold text-[#26160f] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffd39f] hover:shadow-[0_16px_40px_rgba(210,132,63,0.35)]">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#26160f]">
-                <Play className="ml-0.5 h-4 w-4 fill-white text-white" />
-              </span>
-              Xem tác phẩm
-            </button>
+            <main className="main">
+              <div className="icon-container">
+                <MagneticFramer>
+                  <a
+                    href="https://www.facebook.com/dichvulamdep247"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      height: '50px',
+                      width: '50px',
+                      display: 'block',
+                    }}
+                  >
+                    <Image
+                      src="/fb.svg"
+                      alt="Facebook"
+                      width={50}
+                      height={50}
+                    />
+                  </a>
+                </MagneticFramer>
 
-            <a
-              href="#services"
-              className="rounded-full border border-white/40 bg-black/30 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-[#ffca8f] hover:text-[#ffca8f]"
-            >
-              Khám phá dịch vụ
-            </a>
+                <MagneticFramer>
+                  <a
+                    href="https://www.tiktok.com/@pinnguyenhairsalon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block h-12.5 w-12.5"
+                  >
+                    <Image src="/tiktok.svg" alt="TikTok" fill />
+                  </a>
+                </MagneticFramer>
+
+                <MagneticFramer>
+                  <a
+                    href="https://maps.app.goo.gl/RQyfRaz25VaK4nuA9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg
+                      width="36"
+                      height="50"
+                      viewBox="0 0 36 50"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clipPath="url(#clip0_892_959)">
+                        <rect width="36" height="50" fill="transparent" />
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M36 17.5761L35.9998 17.6717C35.9996 17.712 35.9991 17.7523 35.9986 17.7925C35.9995 17.8396 36 17.887 36 17.9347C36 25.4414 30.1516 32.0859 26.2381 36.5326C25.1026 37.8227 24.1299 38.9279 23.5102 39.8153C21.3061 42.9718 20.1429 46.3914 19.8367 47.7065C19.8367 48.697 19.0145 49.5 18 49.5C16.9855 49.5 16.1633 48.697 16.1633 47.7065C15.8571 46.3914 14.6938 42.9718 12.4897 39.8153C11.8701 38.9279 10.8974 37.8227 9.76185 36.5326C5.84843 32.0859 0 25.4414 0 17.9347C0 17.887 0.000449688 17.8396 0.00134969 17.7925C0.000449688 17.7205 0 17.6483 0 17.5761C0 7.86906 8.05882 0 18 0C27.9412 0 36 7.86906 36 17.5761ZM18 24.0327C21.8547 24.0327 24.9795 20.9812 24.9795 17.2174C24.9795 13.4534 21.8547 10.4022 18 10.4022C14.1453 10.4022 11.0205 13.4534 11.0205 17.2174C11.0205 20.9812 14.1453 24.0327 18 24.0327Z"
+                          fill="#34A851"
+                        />
+                        <path
+                          d="M33.9875 9.49201C31.7834 5.34504 27.9366 2.16423 23.2888 0.771484L12.9512 12.5136C14.2222 11.2132 16.0145 10.403 18.0008 10.403C21.8555 10.403 24.9803 13.4544 24.9803 17.2182C24.9803 18.7538 24.4604 20.1706 23.5829 21.3102L33.9875 9.49201Z"
+                          fill="#4285F5"
+                        />
+                        <path
+                          d="M9.97023 36.7713C9.90115 36.6927 9.83163 36.6138 9.76143 36.5341C7.1818 33.603 3.7614 29.7171 1.72949 25.2585L12.474 13.0547C11.5623 14.2062 11.0199 15.6507 11.0199 17.219C11.0199 20.9828 14.1449 24.0342 17.9996 24.0342C19.9521 24.0342 21.7175 23.2512 22.9842 21.9892L9.97023 36.7713Z"
+                          fill="#F9BB0E"
+                        />
+                        <path
+                          d="M4.25898 6.22266C1.60216 9.28542 0 13.2482 0 17.5763C0 17.6486 0.000449688 17.7208 0.00134969 17.7928C0.000449688 17.8398 0 17.8873 0 17.935C0 20.4935 0.679411 22.952 1.73 25.2572L12.4564 13.0739L4.25898 6.22266Z"
+                          fill="#E74335"
+                        />
+                        <path
+                          d="M23.2868 0.770715C21.6148 0.26973 19.8391 0 17.9988 0C12.4902 0 7.55951 2.41621 4.25781 6.22244L12.4553 13.0736L12.4731 13.0534C12.6222 12.8651 12.7811 12.6844 12.9492 12.5125L23.2868 0.770715Z"
+                          fill="transparent"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_892_959">
+                          <rect width="36" height="50" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </MagneticFramer>
+              </div>
+            </main>
           </div>
 
           <div className="mt-12 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
             {[
-              { label: "Khách hàng đã phục vụ", value: "12K+" },
-              { label: "Đánh giá trung bình", value: "4.9/5" },
-              { label: "Nhà tạo mẫu", value: "18" },
+              { label: 'Khách hàng đã phục vụ', value: '12K+' },
+              { label: 'Đánh giá trung bình', value: '4.9/5' },
+              { label: 'Nhà tạo mẫu', value: '18' },
             ].map((item) => (
               <div
                 key={item.label}
                 className="rounded-2xl border border-white/20 bg-white/10 px-5 py-4 backdrop-blur-xl"
               >
-                <p className="font-body text-2xl font-semibold text-white">{item.value}</p>
+                <p className="font-body text-2xl font-semibold text-white">
+                  {item.value}
+                </p>
                 <p className="mt-1 font-body text-xs uppercase tracking-[0.14em] text-white/70">
                   {item.label}
                 </p>
@@ -188,15 +257,21 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="about" className="mx-auto w-full max-w-7xl px-6 pb-6 pt-12 sm:px-8">
+      <section
+        id="about"
+        className="mx-auto w-full max-w-7xl px-6 pb-6 pt-12 sm:px-8"
+      >
         <p className="max-w-3xl font-body text-sm leading-relaxed text-[#f8efdf]/85 sm:text-base">
-          Sun Day Hair Salon là salon tóc hiện đại tại Bình Tân, TP. Hồ Chí Minh, nổi bật với
-          dịch vụ cắt tóc cá nhân hóa, kỹ thuật nhuộm tiên tiến và tạo kiểu chỉn chu cho cả ngày
-          thường lẫn những dịp đặc biệt.
+          Sun Day Hair Salon là salon tóc hiện đại tại Bình Tân, TP. Hồ Chí
+          Minh, nổi bật với dịch vụ cắt tóc cá nhân hóa, kỹ thuật nhuộm tiên
+          tiến và tạo kiểu chỉn chu cho cả ngày thường lẫn những dịp đặc biệt.
         </p>
       </section>
 
-      <section id="services" className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-8 sm:py-20">
+      <section
+        id="services"
+        className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-8 sm:py-20"
+      >
         <RevealOnScroll delay={40}>
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
@@ -224,19 +299,28 @@ export default function Home() {
                 <div className="mb-5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#f8c88f]/20 text-[#ffd39d]">
                   <Star className="h-4 w-4" />
                 </div>
-                <h3 className="font-body text-2xl font-semibold text-[#fff4e2]">{service.title}</h3>
-                <p className="mt-3 font-body text-[15px] leading-relaxed text-white/75">{service.text}</p>
+                <h3 className="font-body text-2xl font-semibold text-[#fff4e2]">
+                  {service.title}
+                </h3>
+                <p className="mt-3 font-body text-[15px] leading-relaxed text-white/75">
+                  {service.text}
+                </p>
               </article>
             </RevealOnScroll>
           ))}
         </div>
       </section>
 
-      <section id="gallery" className="mx-auto w-full max-w-7xl px-6 pb-8 sm:px-8 sm:pb-12">
+      <section
+        id="gallery"
+        className="mx-auto w-full max-w-7xl px-6 pb-8 sm:px-8 sm:pb-12"
+      >
         <RevealOnScroll delay={60}>
           <div className="rounded-3xl border border-white/15 bg-[linear-gradient(180deg,rgba(255,228,196,0.12),rgba(255,255,255,0.02))] p-6 sm:p-8">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-              <h3 className="font-heading text-3xl italic text-[#fff6e9] sm:text-4xl">Mẫu tóc mới nhất</h3>
+              <h3 className="font-heading text-3xl italic text-[#fff6e9] sm:text-4xl">
+                Mẫu tóc mới nhất
+              </h3>
               <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-[#f7ca92]">
                 Cập nhật hằng tuần
               </span>
@@ -267,12 +351,19 @@ export default function Home() {
         </RevealOnScroll>
       </section>
 
-      <section id="contact" className="mx-auto w-full max-w-7xl px-6 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12">
+      <section
+        id="contact"
+        className="mx-auto w-full max-w-7xl px-6 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-12"
+      >
         <RevealOnScroll delay={80}>
           <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border border-[#ffc788]/25 bg-[linear-gradient(120deg,rgba(255,196,132,0.2),rgba(0,0,0,0.15))] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:p-8">
             <div>
-              <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-[#ffd7a8]">Sẵn sàng làm mới diện mạo?</p>
-              <h4 className="mt-3 font-heading text-3xl italic text-[#fff8ec] sm:text-4xl">Đặt lịch trải nghiệm tại Sun Day Hair Salon.</h4>
+              <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-[#ffd7a8]">
+                Sẵn sàng làm mới diện mạo?
+              </p>
+              <h4 className="mt-3 font-heading text-3xl italic text-[#fff8ec] sm:text-4xl">
+                Đặt lịch trải nghiệm tại Sun Day Hair Salon.
+              </h4>
             </div>
 
             <button className="flex items-center gap-2 rounded-full bg-[#fff2de] px-6 py-3 font-body text-sm font-semibold text-[#2b170f] transition duration-300 hover:bg-[#ffe4bf]">
@@ -283,5 +374,5 @@ export default function Home() {
         </RevealOnScroll>
       </section>
     </main>
-  );
+  )
 }
