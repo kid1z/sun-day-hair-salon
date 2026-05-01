@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Geist } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 
@@ -62,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="vi" className={cn('font-sans', geist.variable)}>
+    <html lang="vi" className={cn('font-sans', geist.variable)} suppressHydrationWarning>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Barlow:wght@300;400;500;600&display=swap"
@@ -70,7 +72,18 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <TooltipProvider>{children}</TooltipProvider>
+        <ClerkProvider>
+          <TooltipProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
+          </TooltipProvider>
+        </ClerkProvider>
       </body>
     </html>
   )

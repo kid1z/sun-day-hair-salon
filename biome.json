@@ -13,28 +13,12 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "security": {
-        "noDangerouslySetInnerHtml": "off"
-      },
-      "style": {
-        "noMagicNumbers": "off",
-        "useFilenamingConvention": "off",
-        "useConsistentTypeDefinitions": {
-          "level": "error",
-          "options": {
-            "style": "type"
-          }
-        }
-      },
       "suspicious": {
         "noExplicitAny": "off",
         "noArrayIndexKey": "off"
       },
       "correctness": {
         "noUnusedVariables": "error"
-      },
-      "a11y": {
-        "noSvgWithoutTitle": "off"
       }
     }
   },

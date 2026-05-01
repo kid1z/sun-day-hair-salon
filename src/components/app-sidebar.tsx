@@ -6,9 +6,9 @@ import {
   CommandIcon,
   FolderIcon,
   LayoutDashboardIcon,
-  ListIcon,
   SearchIcon,
   Settings2Icon,
+  UserPlus,
   UsersIcon,
 } from 'lucide-react'
 import type * as React from 'react'
@@ -38,25 +38,25 @@ const data = {
       icon: <LayoutDashboardIcon />,
     },
     {
-      title: 'Lifecycle',
-      url: '/lifecycle',
-      icon: <ListIcon />,
+      title: 'Khách hàng',
+      url: '/customers',
+      icon: <UserPlus />,
     },
     {
-      title: 'Analytics',
-      url: '/analytics',
+      title: 'Lịch sử',
+      url: '/histories',
       icon: <ChartBarIcon />,
     },
-    {
-      title: 'Projects',
-      url: '/projects',
-      icon: <FolderIcon />,
-    },
-    {
-      title: 'Team',
-      url: '/team',
-      icon: <UsersIcon />,
-    },
+    // {
+    //   title: 'Projects',
+    //   url: '/projects',
+    //   icon: <FolderIcon />,
+    // },
+    // {
+    //   title: 'Team',
+    //   url: '/team',
+    //   icon: <UsersIcon />,
+    // },
   ],
   navSecondary: [
     {
@@ -129,7 +129,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   )
