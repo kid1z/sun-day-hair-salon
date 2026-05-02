@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, Scissors, Sparkles, Star } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
 import { SplitText } from '@/components/SplitText'
 import MagneticFramer from '@/components/social-motion'
@@ -87,7 +88,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-size-[42px_42px] opacity-45" />
 
         <nav className="relative z-50 px-4 pt-5 sm:px-8 sm:pt-8">
-          <div className="mx-auto flex w-full max-w-7xl items-center justify-between rounded-full border border-white/20 bg-black/25 px-5 py-3 backdrop-blur-xl sm:px-7">
+          <div className="mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border border-white/20 bg-black/25 px-3 py-2 backdrop-blur-xl sm:px-3">
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-[0_0_0_3px_rgba(0,0,0,0.2)]">
                 <Scissors className="h-5 w-5 text-[#f9f3e7]" />
@@ -114,11 +115,19 @@ export default function Home() {
                 </a>
               ))}
             </div>
-
-            <button className="flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#f3c386] hover:text-[#2b190f] sm:px-6 sm:py-3 sm:text-[14px]">
-              Đặt lịch ngay
-              <ArrowUpRight className="h-4 w-4" />
-            </button>
+            <Link
+              href="https://www.facebook.com/dichvulamdep247"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                type="button"
+                className="cursor-pointer flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[13px] font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#f3c386] hover:text-[#2b190f] sm:px-6 sm:py-3 sm:text-[14px]"
+              >
+                Đặt lịch ngay
+                <ArrowUpRight className="h-4 w-4" />
+              </button>
+            </Link>
           </div>
         </nav>
 
@@ -366,10 +375,12 @@ export default function Home() {
               </h4>
             </div>
 
-            <button className="flex items-center gap-2 rounded-full bg-[#fff2de] px-6 py-3 font-body text-sm font-semibold text-[#2b170f] transition duration-300 hover:bg-[#ffe4bf]">
-              Giữ chỗ ngay
-              <ArrowUpRight className="h-4 w-4" />
-            </button>
+            <Link href="#">
+              <button className="flex items-center gap-2 rounded-full bg-[#fff2de] px-6 py-3 font-body text-sm font-semibold text-[#2b170f] transition duration-300 hover:bg-[#ffe4bf]">
+                Giữ chỗ ngay
+                <ArrowUpRight className="h-4 w-4" />
+              </button>
+            </Link>
           </div>
         </RevealOnScroll>
       </section>

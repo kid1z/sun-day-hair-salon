@@ -108,7 +108,7 @@ export default function Customers() {
         </div>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button>
+            <Button className="cursor-pointer">
               <PlusIcon className="mr-2 size-4" />
               Thêm khách hàng
             </Button>
