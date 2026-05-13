@@ -1,10 +1,12 @@
 'use client'
 
-import { ArrowUpRight, Scissors, Sparkles, Star } from 'lucide-react'
+import { ArrowUpRight, Sparkles, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CinematicIntro } from '@/components/CinematicIntro'
 import { RevealOnScroll } from '@/components/RevealOnScroll'
 import { SplitText } from '@/components/SplitText'
+import { SunDayLogo } from '@/components/SunDayLogo'
 import MagneticFramer from '@/components/social-motion'
 
 const services = [
@@ -63,8 +65,10 @@ const localBusinessJsonLd = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#090807] text-[#f9f3e7]">
+      <CinematicIntro />
       <script
         type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD is static structured data serialized from local constants.
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessJsonLd),
         }}
@@ -90,8 +94,8 @@ export default function Home() {
         <nav className="relative z-50 px-4 pt-5 sm:px-8 sm:pt-8">
           <div className="mx-auto flex w-full max-w-5xl items-center justify-between rounded-full border border-white/20 bg-black/25 px-3 py-2 backdrop-blur-xl sm:px-3">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-[0_0_0_3px_rgba(0,0,0,0.2)]">
-                <Scissors className="h-5 w-5 text-[#f9f3e7]" />
+              <div className="overflow-hidden flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-[0_0_0_3px_rgba(0,0,0,0.2)]">
+                <SunDayLogo className="h-8 w-8 scale-120" />
               </div>
               <span className="font-heading text-xl italic text-[#fef8eb] sm:text-2xl">
                 Sun Day Hair Salon
@@ -205,8 +209,11 @@ export default function Home() {
                       height="50"
                       viewBox="0 0 36 50"
                       fill="none"
+                      role="img"
+                      aria-label="Google Maps"
                       xmlns="http://www.w3.org/2000/svg"
                     >
+                      <title>Google Maps</title>
                       <g clipPath="url(#clip0_892_959)">
                         <rect width="36" height="50" fill="transparent" />
                         <path
@@ -376,7 +383,10 @@ export default function Home() {
             </div>
 
             <Link href="#">
-              <button className="flex items-center gap-2 rounded-full bg-[#fff2de] px-6 py-3 font-body text-sm font-semibold text-[#2b170f] transition duration-300 hover:bg-[#ffe4bf]">
+              <button
+                type="button"
+                className="flex items-center gap-2 rounded-full bg-[#fff2de] px-6 py-3 font-body text-sm font-semibold text-[#2b170f] transition duration-300 hover:bg-[#ffe4bf]"
+              >
                 Giữ chỗ ngay
                 <ArrowUpRight className="h-4 w-4" />
               </button>
